@@ -97,18 +97,3 @@ img{max-width:100%}
   .brand{font-size:20px}
   .nav a{margin-left:14px}
 }
-
-
-/* --- Horizontal overflow guard (added 2026-09-03) ---------------------------
-   Reported from a real iPhone: the page could be dragged sideways. Cause was
-   the contact row, a flex container holding a long unbreakable email address.
-   A flex item defaults to min-width:auto, so it refuses to shrink below the
-   intrinsic width of that address and pushes the row past the viewport.
-   bestmedspalosangeles.com overflowed by 76px at 320px wide because its domain
-   is the longest of the five. Fixed at the source, plus a page-level guard so
-   no future long token can do the same thing. -------------------------------- */
-html, body { overflow-x: hidden; max-width: 100%; }
-img, svg, video, iframe, table, pre { max-width: 100%; }
-.contact-list li { flex-wrap: wrap; min-width: 0; }
-.contact-list li, .contact-list span, .contact-list a { overflow-wrap: anywhere; }
-a, p, li, h1, h2, h3 { overflow-wrap: break-word; }
