@@ -112,3 +112,8 @@ img, svg, video, iframe, table, pre { max-width: 100%; }
 .contact-list li { flex-wrap: wrap; min-width: 0; }
 .contact-list li, .contact-list span, .contact-list a { overflow-wrap: anywhere; }
 a, p, li, h1, h2, h3 { overflow-wrap: break-word; }
+
+/* Article photography */
+.post-img{display:block;width:100%;max-width:560px;height:auto;margin:24px auto;
+  border-radius:6px}
+@media(max-width:640px){.post-img{margin:18px auto}}
